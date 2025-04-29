@@ -1,10 +1,47 @@
-# cmsc408-sp2025-hw8
+---
+title: Homework 8 – World Bank Data Loader
+format: html
+---
 
-Homework 8 - World Bank Indicator Analysis
+# 📦 Homework 8 – World Bank Data Loader
 
-(this is a scaffold.  Please clean it up.)
+This folder contains the code used to populate the **MySQL** server with data for **Homework Assignment 8** in **CMSC 408**.
 
-(Remember, someday you'll look back at this repo and wonder what you were thinking!
-Now is your chance to remind your future self what you were thinking!)
+Everything needed to set up the database is contained within **`loader.qmd`**.
 
+---
 
+# ⚙️ Overview of the Pipeline
+
+The **`loader.qmd`** document performs the following steps:
+
+1. **Downloads** source data in ZIP format from the World Bank Data Store.
+2. **Unzips** the required CSV files needed for analysis.
+3. **Loads** the extracted CSVs into **MySQL** using **Pandas** and **SQLAlchemy**.
+4. **Sets permissions** for users to access the loaded tables.
+
+By running `loader.qmd`, you will automatically fetch, clean, load, and configure the World Bank data for analysis.
+
+---
+
+# 🚀 How to Run
+
+## Prerequisites
+
+Ensure the following Python packages are installed:
+
+- pandas
+- sqlalchemy
+- python-dotenv
+- mysql-connector-python or equivalent MySQL client
+
+You can install them with:
+
+```bash
+pip install pandas sqlalchemy python-dotenv mysql-connector-python
+```
+
+## Execution  
+To run the full data loading pipeline:
+
+quarto render loader.qmd
